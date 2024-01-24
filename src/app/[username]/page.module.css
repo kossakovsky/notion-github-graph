@@ -1,0 +1,91 @@
+/* Base wrapper styling, including light theme defaults */
+.wrapper {
+  background-color: white;
+  color: #191919;
+  display: grid;
+  grid-template-rows: 20px 100px;
+  height: 100vh;
+  padding: 2px;
+}
+
+/* Overrides for dark theme */
+.wrapper.dark {
+  background-color: #191919;
+  color: #d4d4d4;
+}
+
+/* Container for the widget, defines layout structure */
+.widget {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid container for the month labels */
+.month {
+  display: grid;
+  font-size: 14px;
+  gap: 3px;
+  grid-template-columns: repeat(52, 10px);
+  padding: 0 0 0 32px;
+}
+
+/* Flex container for the graph structure, holding week and contributions */
+.graph {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Container for weekday labels */
+.week {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  justify-content: space-between;
+  line-height: 1;
+  padding: 12px 6px 12px 0;
+}
+
+/* Grid container for contribution cells */
+.contributions {
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(52, 10px);
+  grid-template-rows: repeat(7, 10px);
+}
+
+/* Individual cell representing a contribution */
+.contribution {
+  border-radius: 2px;
+  cursor: pointer;
+  height: 10px;
+  position: relative;
+  width: 10px;
+}
+
+/* Tooltip displayed on hover over a contribution cell */
+.contribution:hover::before {
+  content: attr(data-tooltip);
+  background-color: #6e7681;
+  border-radius: 3px;
+  bottom: 150%;
+  color: #d4d4d4;
+  font-size: 12px;
+  left: 50%;
+  padding: 4px 8px;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Small arrow under the tooltip, pointing to the hovered contribution cell */
+.contribution:hover::after {
+  content: '';
+  border-left: 3px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #6e7681;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: -5px;
+  position: absolute;
+  transform: translateX(-50%);
+}
