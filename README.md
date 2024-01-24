@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Notion GitHub Tracker
+
+## Introduction
+
+Notion GitHub Tracker is a dynamic Next.js application designed to seamlessly integrate GitHub user data into Notion. This tool offers a convenient way to track and display GitHub contributions directly within a Notion page.
+
+## Live Deployment
+
+The project is deployed and can be accessed at [Notion GitHub Tracker](https://notion-github.vercel.app/kossakovsky?theme=dark). Simply replace `:username` with your GitHub username and optionally specify the theme (`light` or `dark`, with `dark` being the default).
+
+Example: `https://notion-github.vercel.app/kossakovsky?theme=dark`
+
+![screenshot](https://i.imgur.com/zToip1I.png)
 
 ## Getting Started
 
-First, run the development server:
+To run the development server locally:
 
 ```bash
 npm run dev
@@ -14,23 +26,43 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation and Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository.
+2. Install dependencies using `npm install` or `yarn install`.
+3. Start the development server as mentioned above.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+The project allows users to view GitHub contribution data directly on Notion. Follow these steps to use it:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Navigate to the deployed URL: `https://notion-github.vercel.app/:username?theme=dark`.
+2. Replace `:username` with your GitHub username.
+3. Choose the theme by setting `theme=dark` or `theme=light` in the URL.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Notion Integration
 
-## Deploy on Vercel
+To embed this in Notion:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Create a new Embed block in your Notion document.
+2. Set the URL to the deployed project URL with your GitHub username.
+3. Adjust the size of the embed block as needed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contributing
+
+Contributions to improve Notion GitHub Tracker are welcome. Feel free to fork the repository, make changes, and submit a pull request.
+
+## Known Caveats
+
+- Not fully responsive, which may affect the display on mobile devices.
+- Limited theme adaptability in Notion embeds due to Notion's current API constraints.
+
+## License
+[MIT](https://github.com/kossakovsky/notion-github-graph/blob/main/LICENSE)
+
+## Contact
+
+For any queries or collaboration, please reach out to [https://t.me/kossakovsky](https://t.me/kossakovsky)
+
