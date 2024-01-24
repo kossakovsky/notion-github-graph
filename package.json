@@ -1,5 +1,5 @@
 {
-  "name": "notion-github",
+  "name": "notion-github-tracker",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.2",
-    "@vercel/speed-insights": "^1.0.7",
     "classnames": "^2.5.1",
     "next": "14.1.0",
     "react": "^18",
