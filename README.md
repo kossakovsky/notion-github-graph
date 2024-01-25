@@ -10,7 +10,13 @@ The project is deployed and can be accessed at [Notion GitHub Tracker](https://n
 
 Example: `https://notion-github.vercel.app/kossakovsky?theme=dark`
 
-![screenshot](https://i.imgur.com/hvSRiY1.png)
+### Dark theme
+
+![dark theme](https://i.imgur.com/hvSRiY1.png)
+
+### Light theme
+
+![light theme](https://i.imgur.com/4tNdzLW.png)
 
 ## Getting Started
 
@@ -64,5 +70,5 @@ Contributions to improve Notion GitHub Tracker are welcome. Feel free to fork th
 
 ## Contact
 
-For any queries or collaboration, please reach out to [https://t.me/kossakovsky](https://t.me/kossakovsky)
+[Github](https://github.com/kossakovsky) [Telegram](https://t.me/kossakovsky)
 
