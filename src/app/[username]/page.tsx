@@ -1,32 +1,7 @@
 import cx from 'classnames';
-import {
-  getMonthList,
-  getContributions,
-  getContributionTooltip,
-} from '@/utils';
+import { Theme, getMonthList, fetchContributions } from '@/utils';
 
 import styles from './page.module.css';
-
-// Define color palettes for light and dark themes
-const PALETTE = {
-  light: {
-    '0': '#ebedf0',
-    '1': '#9be9a8',
-    '2': '#40c463',
-    '3': '#30a14e',
-    '4': '#216e39',
-  },
-  dark: {
-    '0': '#5f5f5f',
-    '1': '#0e4429',
-    '2': '#006d32',
-    '3': '#26a641',
-    '4': '#39d353',
-  },
-};
-
-// Type definition for theme options
-type Theme = 'light' | 'dark';
 
 // Type definition for component props
 type Props = {
@@ -37,13 +12,13 @@ type Props = {
 export default async function ContributionsGraph(props: Props) {
   // Destructure username from props; if not provided, exit function early
   const { username } = props.params;
-  if (!username) return;
+  if (!username) return; // Exits if username is not provided
 
-  // Destructure theme from props with 'dark' as the default value
-  const { theme = 'dark' } = props.searchParams;
+  // Destructure theme from props, defaulting to 'dark' if not specified
+  const { theme } = props.searchParams;
 
-  // Fetch contributions data for the given username
-  const contributions = await getContributions(username);
+  // Fetch contributions data for the specified username and theme
+  const contributions = await fetchContributions(username, theme);
 
   // Retrieve the list of months with start positions from the contributions data
   const monthsList = getMonthList(contributions);
@@ -81,16 +56,20 @@ export default async function ContributionsGraph(props: Props) {
           </div>
           {/* Map over the contributions to display as grid items */}
           <div className={styles.contributions}>
-            {contributions.map((contribution) => (
-              <div
-                key={contribution.date}
-                // Apply background color based on the intensity of the contribution and theme
-                style={{ background: PALETTE[theme][contribution.intensity] }}
-                className={styles.contribution}
-                // Set custom tooltip data attribute for each contribution
-                data-tooltip={getContributionTooltip(contribution)}
-              />
-            ))}
+            {contributions.map((contribution, i) =>
+              contribution ? (
+                <div
+                  key={contribution.date}
+                  // Styles each square based on contribution intensity and theme
+                  style={{ background: contribution.color }}
+                  className={styles.contribution}
+                  // Adds a custom tooltip for each contribution
+                  data-tooltip={contribution.tooltip}
+                />
+              ) : (
+                <div key={i} />
+              ),
+            )}
           </div>
         </div>
       </div>

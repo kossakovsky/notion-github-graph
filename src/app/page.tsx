@@ -10,7 +10,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mt-6">Live Deployment</h2>
         <p className="mt-2">The project is deployed and can be accessed at <a href="https://notion-github.vercel.app/kossakovsky?theme=dark" className="text-blue-500 hover:text-blue-700">Notion GitHub Tracker</a>. Simply replace <code>:username</code> with your GitHub username and optionally specify the theme (<code>light</code> or <code>dark</code>, with <code>dark</code> being the default).</p>
         <p className="mt-2">Example: <a href="https://notion-github.vercel.app/kossakovsky?theme=dark" className="text-blue-500 hover:text-blue-700">https://notion-github.vercel.app/kossakovsky?theme=dark</a></p>
-        <img src="https://i.imgur.com/zToip1I.png" alt="screenshot" className="mt-4 shadow-lg" />
+        <img src="https://i.imgur.com/hvSRiY1.png" alt="screenshot" className="mt-4 shadow-lg" />
 
         <h2 className="text-2xl font-semibold mt-6">Getting Started</h2>
         <p className="mt-2">To run the development server locally:</p>
@@ -53,7 +53,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mt-6">Known Caveats</h2>
         <ul className="list-disc list-inside ml-6">
           <li>Not fully responsive, which may affect the display on mobile devices.</li>
-          <li>Limited theme adaptability in Notion embeds due to Notion's current API constraints.</li>
+          <li>Limited theme adaptability in Notion embeds due to Notion&apos;s current API constraints.</li>
         </ul>
 
         <h2 className="text-2xl font-semibold mt-6">License</h2>

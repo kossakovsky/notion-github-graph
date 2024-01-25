@@ -10,7 +10,7 @@ The project is deployed and can be accessed at [Notion GitHub Tracker](https://n
 
 Example: `https://notion-github.vercel.app/kossakovsky?theme=dark`
 
-![screenshot](https://i.imgur.com/zToip1I.png)
+![screenshot](https://i.imgur.com/hvSRiY1.png)
 
 ## Getting Started
 
