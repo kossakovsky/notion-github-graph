@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <div className="bg-gray-100 text-gray-900 font-sans p-8">
@@ -36,16 +38,21 @@ export default function Home() {
         </p>
 
         <h3 className="text-xl font-semibold mt-6">Dark theme</h3>
-        <img
+        <Image
           src="https://i.imgur.com/hvSRiY1.png"
-          alt="screenshot"
+          alt="Dark theme screenshot of GitHub contribution graph"
+          width={800}
+          height={400}
           className="mt-4 shadow-lg"
+          priority
         />
 
         <h3 className="text-xl font-semibold mt-6">Light theme</h3>
-        <img
+        <Image
           src="https://i.imgur.com/4tNdzLW.png"
-          alt="screenshot"
+          alt="Light theme screenshot of GitHub contribution graph"
+          width={800}
+          height={400}
           className="mt-4 shadow-lg"
         />
 
