@@ -18,7 +18,7 @@ export default function Home() {
         <p className="mt-2">
           The project is deployed and can be accessed at{' '}
           <a
-            href="https://notion-github.vercel.app/kossakovsky?theme=dark"
+            href="https://notion-github-graph.vercel.app/kossakovsky?theme=dark"
             className="text-blue-500 hover:text-blue-700"
           >
             Notion GitHub Tracker
@@ -30,10 +30,10 @@ export default function Home() {
         <p className="mt-2">
           Example:{' '}
           <a
-            href="https://notion-github.vercel.app/kossakovsky?theme=dark"
+            href="https://notion-github-graph.vercel.app/kossakovsky?theme=dark"
             className="text-blue-500 hover:text-blue-700"
           >
-            https://notion-github.vercel.app/kossakovsky?theme=dark
+            https://notion-github-graph.vercel.app/kossakovsky?theme=dark
           </a>
         </p>
 
@@ -91,10 +91,10 @@ export default function Home() {
           <li>
             Navigate to the deployed URL:{' '}
             <a
-              href="https://notion-github.vercel.app/:username?theme=dark"
+              href="https://notion-github-graph.vercel.app/:username?theme=dark"
               className="text-blue-500 hover:text-blue-700"
             >
-              https://notion-github.vercel.app/:username?theme=dark
+              https://notion-github-graph.vercel.app/:username?theme=dark
             </a>
             .
           </li>
