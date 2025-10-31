@@ -198,7 +198,7 @@ Contributions are welcome! Here's how you can help:
 
 ## License
 
-[MIT](https://github.com/kossakovsky/notion-github-graph/blob/main/LICENSE)
+[Apache License 2.0](https://github.com/kossakovsky/notion-github-graph/blob/main/LICENSE)
 
 ## Contact
 
