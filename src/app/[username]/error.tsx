@@ -14,6 +14,9 @@ export default function Error({
   }, [error]);
 
   const getErrorMessage = () => {
+    if (error.message.includes('token not configured') || error.message.includes('GITHUB_TOKEN')) {
+      return 'GitHub token not configured. Please set GITHUB_TOKEN in your .env.local file. See .env.example for instructions.';
+    }
     if (error.message.includes('User not found')) {
       return 'GitHub user not found. Please check the username and try again.';
     }

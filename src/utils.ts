@@ -82,6 +82,12 @@ export async function fetchContributions(
     throw new Error('Invalid GitHub username format');
   }
 
+  // Check for GitHub token
+  const githubToken = process.env.GITHUB_TOKEN;
+  if (!githubToken) {
+    throw new Error('GitHub token not configured. Please set GITHUB_TOKEN environment variable.');
+  }
+
   const query = `
     query {
       user(login: "${username}") {
@@ -104,6 +110,7 @@ export async function fetchContributions(
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${githubToken}`,
       },
       body: JSON.stringify({ query }),
       // Enable caching for better performance

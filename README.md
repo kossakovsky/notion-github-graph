@@ -58,14 +58,24 @@ npm install
 yarn install
 ```
 
-3. Start the development server:
+3. Configure GitHub Token:
+```bash
+# Copy the example environment file
+cp env.example .env.local
+
+# Edit .env.local and add your GitHub Personal Access Token
+# Get your token at: https://github.com/settings/tokens
+# No special scopes are required - just create a token with public access
+```
+
+4. Start the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ### Available Commands
 
@@ -117,7 +127,7 @@ To embed the contribution graph in Notion:
 - **Runtime:** React 19.2.0
 - **Language:** TypeScript 5
 - **Styling:** Tailwind CSS 3.4.18 + CSS Modules
-- **Data Source:** GitHub GraphQL API (unauthenticated)
+- **Data Source:** GitHub GraphQL API (authenticated)
 - **Deployment:** Vercel
 - **Analytics:** Vercel Analytics
 
@@ -148,11 +158,26 @@ src/
 
 ## API Rate Limits
 
-The application uses GitHub's **unauthenticated GraphQL API**, which has a rate limit of:
+The application uses GitHub's **authenticated GraphQL API**, which requires a Personal Access Token. Rate limits:
 
-- **60 requests per hour per IP address**
+- **Without token:** 60 requests per hour per IP address (will cause errors)
+- **With token:** 5,000 requests per hour per token
 
-The 1-hour ISR caching significantly reduces API calls. For higher rate limits (5,000 requests/hour), you can add GitHub authentication by modifying the fetch request in `src/utils.ts` to include an authorization header.
+The 1-hour ISR caching significantly reduces API calls, making the token rate limit more than sufficient for most use cases.
+
+### Setting Up GitHub Token
+
+1. Go to [GitHub Settings > Personal Access Tokens](https://github.com/settings/tokens)
+2. Click "Generate new token" → "Generate new token (classic)"
+3. Give it a descriptive name (e.g., "Notion GitHub Graph")
+4. **No scopes are required** for public data access
+5. Generate and copy the token
+6. Add it to your `.env.local` file:
+   ```
+   GITHUB_TOKEN=ghp_your_token_here
+   ```
+
+For Vercel deployment, add the token as an environment variable in your project settings.
 
 ## Contributing
 
@@ -173,7 +198,7 @@ Contributions are welcome! Here's how you can help:
 ## Known Limitations
 
 - **Not responsive** - Fixed-width grid doesn't adapt well to mobile screens
-- **No authentication** - Limited to 60 API requests/hour per IP
+- **Requires GitHub token** - Must configure GITHUB_TOKEN environment variable
 - **52-week fixed display** - Always shows exactly one year of data
 - **No contribution breakdown** - Shows total count only (no separation of commits, PRs, reviews)
 
